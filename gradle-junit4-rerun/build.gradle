@@ -17,10 +17,13 @@ dependencies {
 }
 
 test {
-//    filter {
-//        includeTestsMatching("example.junit4.RerunFeatureTest.testToFail()")
-//        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail")
-//    }
+    /*filter {
+        //not working
+        includeTestsMatching("example.junit4.RerunFeatureTest.testToFail()")
+
+        //Here is how Idea tries to run it for JUnit4 and it's working
+        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail")
+    }*/
     useJUnitPlatform ()
     testLogging {
         events "passed", "skipped", "failed"

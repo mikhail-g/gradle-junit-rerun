@@ -15,10 +15,13 @@ dependencies {
 }
 
 test {
-//    filter {
-//        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail()")
-//        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail")
-//    }
+    /*filter {
+        //Here is how Idea tries to run it for JUnit5 and it doesn't work!
+        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail()")
+
+        //Here is how it will work with gradle
+        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail")
+    }*/
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
