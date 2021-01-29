@@ -1,0 +1,3 @@
+rootProject.name = 'gradle-junit-rerun'
+include 'gradle-junit5-rerun'
+include 'gradle-junit4-rerun'

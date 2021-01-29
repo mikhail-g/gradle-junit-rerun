@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def junitBomVersion = "5.7.0"
+
+    testImplementation(platform("org.junit:junit-bom:$junitBomVersion"))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+test {
+//    filter {
+//        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail()")
+//        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail")
+//    }
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

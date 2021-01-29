@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def junit4Version = "4.13.1"
+    def junitBomVersion = "5.7.0"
+
+    testImplementation(platform("org.junit:junit-bom:$junitBomVersion"))
+    testImplementation("junit:junit:$junit4Version")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
+}
+
+test {
+//    filter {
+//        includeTestsMatching("example.junit4.RerunFeatureTest.testToFail()")
+//        includeTestsMatching("example.junit5.RerunFeatureTest.testToFail")
+//    }
+    useJUnitPlatform ()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
